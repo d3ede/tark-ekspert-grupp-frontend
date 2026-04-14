@@ -1,0 +1,17 @@
+# Local agent instructions contain repository-specific workflow metadata.
+AGENTS.md
+
+# Dependencies and generated output
+node_modules/
+dist/
+.cache/
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+

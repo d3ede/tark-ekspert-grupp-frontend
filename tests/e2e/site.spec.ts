@@ -1,0 +1,5 @@
+import {expect,test} from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
+
+test("ET content, RU switch and compatible enquiry form",async({page})=>{await page.goto("/");await expect(page.getByRole("heading",{name:/Ehitus- ja remonditööd/})).toBeVisible();await expect(page.locator('form')).toHaveAttribute('action','https://tarkekspertgrupp.ee/send.php');await expect(page.locator('input[name="captcha_a"]')).toHaveValue(/\d+/);await page.getByRole('link',{name:/RU keel/}).click();await expect(page).toHaveURL(/\/ru$/);await expect(page.getByRole("heading",{name:/Строительные и ремонтные работы/})).toBeVisible();await expect(page.getByRole('link',{name:/ET keel/})).toBeVisible();await expect(page.locator('html')).toHaveAttribute('lang','ru-EE')});
+test("homepage has no serious accessibility violations",async({page})=>{await page.goto("/");const results=await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21a","wcag21aa"]).analyze();expect(results.violations.filter(item=>item.impact==="serious"||item.impact==="critical")).toEqual([])});

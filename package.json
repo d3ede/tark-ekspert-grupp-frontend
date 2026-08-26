@@ -1,5 +1,5 @@
 {
-  "name": "north-and-forge",
+  "name": "tark-ekspert-grupp",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -10,28 +10,15 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:e2e": "playwright test",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
-    "panorama:tiles": "node scripts/generate-panorama-tiles.mjs",
-    "panorama:prepare": "node scripts/prepare-panorama.mjs"
+    "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^1.1.0",
-    "@photo-sphere-viewer/core": "^5.15.1",
-    "@photo-sphere-viewer/gyroscope-plugin": "^5.15.1",
-    "@photo-sphere-viewer/markers-plugin": "^5.15.1",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
-    "clsx": "^2.1.1",
-    "drizzle-orm": "^0.45.2",
     "lucide-react": "^1.37.0",
     "next": "16.3.3",
     "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "resend": "^6.25.0",
-    "tailwind-merge": "^3.6.0",
-    "zod": "^4.5.4"
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
@@ -43,11 +30,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^6.1.1",
-    "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.3.3",
     "jsdom": "^30.0.1",
-    "sharp": "^0.35.4",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.1.11"

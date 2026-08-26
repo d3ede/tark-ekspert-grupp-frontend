@@ -3,8 +3,13 @@ AGENTS.md
 
 # Dependencies and generated output
 node_modules/
+.next/
 dist/
 .cache/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
 .env
 .env.*
 !.env.example
@@ -15,3 +20,5 @@ dist/
 .DS_Store
 Thumbs.db
 
+# Temporary project bootstrap directory
+scaffold/

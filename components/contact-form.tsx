@@ -1,10 +1,15 @@
 "use client";
 import { MoveRight } from "lucide-react";
+import { useEffect,useState } from "react";
 import type { getContent } from "@/lib/site-content";
 
 type Copy=ReturnType<typeof getContent>;
+const initialChallenge:[number,number]=[7,6];
+function createChallenge():[number,number]{return [Math.floor(Math.random()*9)+1,Math.floor(Math.random()*9)+1]}
+
 export function ContactForm({copy}:{copy:Copy}){
-  const numbers:[number,number]=[7,6];
+  const [numbers,setNumbers]=useState(initialChallenge);
+  useEffect(()=>{const timer=window.setTimeout(()=>setNumbers(createChallenge()),0);return ()=>window.clearTimeout(timer)},[]);
   return <form className="contact-form" action={copy.endpoint} method="post">
     <h3>{copy.formTitle}</h3>
     <div className="field-row"><label>{copy.name}<input name="name" autoComplete="name" required/></label><label>{copy.phoneLabel}<input name="phone" type="tel" autoComplete="tel" required/></label></div>

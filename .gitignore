@@ -22,3 +22,5 @@ Thumbs.db
 
 # Temporary project bootstrap directory
 scaffold/
+
+.vercel

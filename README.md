@@ -32,3 +32,17 @@ pnpm build
 ```
 
 Automated tests never submit an enquiry.
+
+## Vercel deployment
+
+The Vercel project is named `tark-ekspert-grupp`. Link a fresh checkout once, then deploy the current committed tree to production:
+
+```bash
+vercel login
+vercel link --yes --project tark-ekspert-grupp
+vercel --prod --yes
+```
+
+Run `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm test:e2e` and `pnpm build` before a production deployment. The local `.vercel` directory only stores the project link and remains ignored by Git.
+
+Automatic deployments require the Vercel GitHub App to have access to the repository. For a private repository owned by a personal GitHub account, Vercel requires that repository owner to establish the connection; otherwise use the CLI flow above.
